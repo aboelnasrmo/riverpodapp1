@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
-part 'main.g.dart';
 
-@riverpod
-int testProvider(ref) {
-  return 3;
-}
+import 'package:riverpodapp1/prov.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -31,9 +26,16 @@ class MainPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // TODO: implement build
     final int value = ref.watch(testProviderProvider);
-    return Scaffold(
-      body: Center(
-        child: Text(value.toString()),
+    final String name = ref.watch(nameProvider);
+    return SafeArea(
+      child: Scaffold(
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(value.toString()),
+            Text(name),
+          ],
+        ),
       ),
     );
   }

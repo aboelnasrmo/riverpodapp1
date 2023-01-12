@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'main.dart';
+part of 'prov.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -29,7 +29,7 @@ class _SystemHash {
   }
 }
 
-String _$testProviderHash() => r'f8f43a8e33731a87f1a30ecb0347fa6355869c73';
+String _$testProviderHash() => r'2706f973d46426da9ddd71fb6677f07082c1967c';
 
 /// See also [testProvider].
 final testProviderProvider = AutoDisposeProvider<int>(
@@ -39,3 +39,13 @@ final testProviderProvider = AutoDisposeProvider<int>(
       const bool.fromEnvironment('dart.vm.product') ? null : _$testProviderHash,
 );
 typedef TestProviderRef = AutoDisposeProviderRef<int>;
+String _$nameHash() => r'db91a44262ce9a6150bb911c8bcc4b621a961833';
+
+/// See also [name].
+final nameProvider = AutoDisposeProvider<String>(
+  name,
+  name: r'nameProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$nameHash,
+);
+typedef NameRef = AutoDisposeProviderRef<String>;
