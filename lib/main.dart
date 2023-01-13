@@ -27,13 +27,15 @@ class MainPage extends ConsumerWidget {
     // TODO: implement build
     final int value = ref.watch(testProviderProvider);
     final String name = ref.watch(nameProvider);
+    final DateTime date = ref.watch(myDateProvider);
     return SafeArea(
       child: Scaffold(
         body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(value.toString()),
             Text(name),
+            Text(date.toString()),
           ],
         ),
       ),

@@ -49,3 +49,13 @@ final nameProvider = AutoDisposeProvider<String>(
       const bool.fromEnvironment('dart.vm.product') ? null : _$nameHash,
 );
 typedef NameRef = AutoDisposeProviderRef<String>;
+String _$myDateHash() => r'd31051587b7ee07fcef7bc492f9a9bf76fcbd25d';
+
+/// See also [myDate].
+final myDateProvider = AutoDisposeProvider<DateTime>(
+  myDate,
+  name: r'myDateProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$myDateHash,
+);
+typedef MyDateRef = AutoDisposeProviderRef<DateTime>;

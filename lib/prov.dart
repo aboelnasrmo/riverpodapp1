@@ -11,3 +11,8 @@ int testProvider(ref) {
 String name(ref) {
   return 'MO';
 }
+
+@riverpod
+DateTime myDate(ref) {
+  return DateTime.now();
+}
