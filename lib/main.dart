@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      home: SecondPage(),
     );
   }
 }
@@ -28,16 +28,47 @@ class MainPage extends ConsumerWidget {
     final int value = ref.watch(testProviderProvider);
     final String name = ref.watch(nameProvider);
     final DateTime date = ref.watch(myDateProvider);
-    return SafeArea(
-      child: Scaffold(
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(value.toString()),
-            Text(name),
-            Text(date.toString()),
-          ],
-        ),
+    return Scaffold(
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(value.toString()),
+              Text(name),
+              Text(date.toString()),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+//same as statful
+class SecondPage extends ConsumerWidget {
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final clockProvider = StateNotifierProvider<Clock, DateTime>((ref) {
+      return Clock();
+    });
+    final DateTime myClock = ref.watch(clockProvider);
+    return Scaffold(
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(myClock.toString()),
+
+              // Text(value.toString()),
+              // Text(name),
+              // Text(date.toString()),
+            ],
+          ),
+        ],
       ),
     );
   }
